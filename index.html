@@ -1,11 +1,97 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="UTF-8">
-    <title>Rock Paper Scissors</title>
+<head>
+  <meta charset="UTF-8">
+  <title>Rock Paper Scissors</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="./style.css">
-  </head>
-  <body>
+</head>
+<body>
+  <nav class="navbar navbar-default">
+      <div class="container">
+        <div class="navbar-header">
+          <a class="navbar-brand">Rock Paper Scissors Nukes!</a>
+        </div>
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+          <ul class="nav navbar-nav navbar-right">
+            <li><a href="#">Korean</a></li>
+            <li><a href="#">Russian</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <div class="container">
+    <div class="jumbotron">
+  <h1 class="display-3">Rock Paper Scissors Nuke!</h1>
+  <p class="lead">Diplomacy in its most basic form.</p>
+  </p>
+</div>
+</div>
+  <div class="container">
+    <div class="row" div id="row1">
+      <div class="col-lg-12">
+        <div id="game">
 
-  </body>
+          <p><h2>Press "r" to play "rock", "p" to play "paper" or "s" to play "scissors"!</h2></p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+        <script type="text/javascript">
+          //Creates an array that lists out all of the options
+          var computerChoices = ["r", "p", "s"];
+
+          //Creating variables to hold the number of iwns, losses and ties. They start at 0
+          var wins = 0;
+          var losses  = 0;
+          var ties = 0;
+
+          //This function is run whenver the user presses a key.
+          document.onkeyup = function(event) {
+
+            //Determines which key was pressed
+
+            var userGuess = event.key;
+
+            //Randomly chooses a choice sfromt he options array.  This is the Computer's guess.
+            var computerGuess = computerChoices[Math.floor(Math.random() * computerChoices.length)];
+
+            //This logic determines the outcome of the game, and increments the approriate number
+            if ((userGuess === "r") || (userGuess === "p") || (userGuess === "s")) {
+
+              if ((userGuess === "r") && (computerGuess === "s")) {
+                wins++;
+                alert ("No Nukes! Guam is safe!");
+              } else if ((userGuess === "r") && (computerGuess === "p")) {
+                losses++;
+                alert ("DPRK gets all the nukes...Good-bye LA!");
+              } else if ((userGuess === "s") && (computerGuess === "r")) {
+                losses++;
+              } else if ((userGuess === "s") && (computerGuess === "p")) {
+                wins++;
+              } else if ((userGuess === "p") && (computerGuess === "r")) {
+                wins++;
+              } else if ((userGuess === "p") && (computerGuess === "s")) {
+                losses++;
+              } else if (userGuess === computerGuess) {
+                ties++;
+                alert ("DPRK gets some nukes...Fix this, China!");
+              }
+
+              //Creating a variable to hold our new HTML.  OUr HTML now keeps track of hte user and computer guesses, and wins/losses/ties
+              var html =
+              "<p><h2>You chose: " + userGuess + "</h2></p>" +
+              "<p><h2>The computer chose: " + computerGuess + "</h2></p>" +
+              "<p><h3>wins: " + wins + "</h3></p>" +
+              "<p><h3>losses: " + losses + "</h3></p>" +
+              "<p><h3>ties: " + ties + "</h3></p>";
+
+              //Set the inner HTML contents of #game div to ur html string
+              document.querySelector("#game").innerHTML = html;
+            }
+          };
+
+  </script>
+</body>
 </html>
