@@ -75,16 +75,12 @@
           alert ("DPRK gets all the nukes...Good-bye LA!");
         } else if ((userGuess === "s") && (computerGuess === "r")) {
           losses++;
-          alert ("DPRK gets all the nukes...Good-bye LA!");
         } else if ((userGuess === "s") && (computerGuess === "p")) {
           wins++;
-          alert ("No Nukes! Guam is safe!");
         } else if ((userGuess === "p") && (computerGuess === "r")) {
           wins++;
-          alert ("No Nukes! Guam is safe!");
         } else if ((userGuess === "p") && (computerGuess === "s")) {
           losses++;
-          alert ("DPRK gets all the nukes...Good-bye LA!");
         } else if (userGuess === computerGuess) {
           ties++;
           alert ("DPRK gets some nukes...Fix this, China!");
@@ -94,9 +90,9 @@
         var html =
         "<p><h2>You chose: " + userGuess + "</h2></p>" +
         "<p><h2>The computer chose: " + computerGuess + "</h2></p>" +
-        "<p><h3>Wins: " + wins + "</h3></p>" +
-        "<p><h3>Losses: " + losses + "</h3></p>" +
-        "<p><h3>Ties: " + ties + "</h3></p>";
+        "<p><h3>wins: " + wins + "</h3></p>" +
+        "<p><h3>losses: " + losses + "</h3></p>" +
+        "<p><h3>ties: " + ties + "</h3></p>";
 
         //Set the inner HTML contents of #game div to ur html string
         document.querySelector("#game").innerHTML = html;

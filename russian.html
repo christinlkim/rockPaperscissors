@@ -10,20 +10,20 @@
   <nav class="navbar navbar-default">
     <div class="container">
       <div class="navbar-header">
-        <a class="navbar-brand">Rock Paper Scissors Nukes!</a>
+        <a class="navbar-brand">Ножницы для каменной бумаги!</a>
       </div>
       <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
         <ul class="nav navbar-nav navbar-right">
           <li><a href="./korean.html">한국어</a></li>
-          <li><a href="./russian.html">русскийрусский</a></li>
+          <li><a href="./index.html">English</a></li>
         </ul>
       </div>
     </div>
   </nav>
   <div class="container">
     <div class="jumbotron">
-      <h1 class="display-3">Rock Paper Scissors Nuke!</h1>
-      <p class="lead">Diplomacy in its most basic form.</p>
+      <h1 class="display-3">Ножницы для каменной бумаги</h1>
+      <p class="lead">Базовая дипломатия</p>
     </p>
   </div>
 </div>
@@ -32,7 +32,7 @@
     <div class="col-lg-12">
       <div id="game">
 
-        <p><h2>Press "r" to play "rock", "p" to play "paper" or "s" to play "scissors"!</h2></p>
+        <p><h2>Нажмите «r», чтобы играть «rock», «p», чтобы играть «бумага» или «s», чтобы играть «ножницы»!</h2></p>
       </div>
     </div>
     </div
@@ -69,34 +69,34 @@
 
         if ((userGuess === "r") && (computerGuess === "s")) {
           wins++;
-          alert ("No Nukes! Guam is safe!");
+          alert ("Без ядер! Гуам безопасен!");
         } else if ((userGuess === "r") && (computerGuess === "p")) {
           losses++;
-          alert ("DPRK gets all the nukes...Good-bye LA!");
+          alert ("Северная Корея получает все ядерные бомбы ... Прощай, Лос-Анджелес!");
         } else if ((userGuess === "s") && (computerGuess === "r")) {
           losses++;
-          alert ("DPRK gets all the nukes...Good-bye LA!");
+          alert ("Северная Корея получает все ядерные бомбы ... Прощай, Лос-Анджелес!");
         } else if ((userGuess === "s") && (computerGuess === "p")) {
           wins++;
-          alert ("No Nukes! Guam is safe!");
+          alert ("Без ядер! Гуам безопасен!");
         } else if ((userGuess === "p") && (computerGuess === "r")) {
           wins++;
-          alert ("No Nukes! Guam is safe!");
+          alert ("Без ядер! Гуам безопасен!");
         } else if ((userGuess === "p") && (computerGuess === "s")) {
           losses++;
-          alert ("DPRK gets all the nukes...Good-bye LA!");
+          alert ("Северная Корея получает все ядерные бомбы ... Прощай, Лос-Анджелес!");
         } else if (userGuess === computerGuess) {
           ties++;
-          alert ("DPRK gets some nukes...Fix this, China!");
+          alert ("Северная Корея получает несколько ядер ... Исправить это, Китай!");
         }
 
         //Creating a variable to hold our new HTML.  OUr HTML now keeps track of hte user and computer guesses, and wins/losses/ties
         var html =
-        "<p><h2>You chose: " + userGuess + "</h2></p>" +
-        "<p><h2>The computer chose: " + computerGuess + "</h2></p>" +
-        "<p><h3>Wins: " + wins + "</h3></p>" +
-        "<p><h3>Losses: " + losses + "</h3></p>" +
-        "<p><h3>Ties: " + ties + "</h3></p>";
+        "<p><h2>Твой выбор: " + userGuess + "</h2></p>" +
+        "<p><h2>Выбор компьютера: " + computerGuess + "</h2></p>" +
+        "<p><h3>Выигрыши: " + wins + "</h3></p>" +
+        "<p><h3>потери: " + losses + "</h3></p>" +
+        "<p><h3>связи: " + ties + "</h3></p>";
 
         //Set the inner HTML contents of #game div to ur html string
         document.querySelector("#game").innerHTML = html;
