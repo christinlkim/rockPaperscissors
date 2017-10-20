@@ -1,17 +1,10 @@
 body {
-
-}
-
-.container {
-  background-color: white;
-}
-
-.jumbotron {
-
-  border-radius: 100px;
-  margin-bottom: : 50px;
   background-image:url("https://i.ytimg.com/vi/vxNnUU3eRD0/maxresdefault.jpg");
+  text: white;
+}
 
+#game {
+  /*color: white;*/
 }
 
 #kimtrump {

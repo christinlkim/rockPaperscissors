@@ -32,7 +32,7 @@
     <div class="col-lg-12">
       <div id="game">
 
-        <p><h2>Нажмите «r», чтобы играть «rock», «p», чтобы играть «бумага» или «s», чтобы играть «ножницы»!</h2></p>
+        <p><h2>Нажмите «r», чтобы играть «рок», «p», чтобы играть «бумага», «s», чтобы играть «ножницы», или «n», чтобы играть в ядерное оружие!</h2></p>
       </div>
     </div>
     </div
@@ -47,7 +47,7 @@
 
     <script type="text/javascript">
     //Creates an array that lists out all of the options
-    var computerChoices = ["r", "p", "s"];
+    var computerChoices = ["r", "p", "s", "n"];
 
     //Creating variables to hold the number of iwns, losses and ties. They start at 0
     var wins = 0;
@@ -65,29 +65,40 @@
       var computerGuess = computerChoices[Math.floor(Math.random() * computerChoices.length)];
 
       //This logic determines the outcome of the game, and increments the approriate number
-      if ((userGuess === "r") || (userGuess === "p") || (userGuess === "s")) {
+      if ((userGuess === "r") || (userGuess === "p") || (userGuess === "s") || (userGuess === "n")) {
 
         if ((userGuess === "r") && (computerGuess === "s")) {
           wins++;
-          alert ("Без ядер! Гуам безопасен!");
+
         } else if ((userGuess === "r") && (computerGuess === "p")) {
           losses++;
-          alert ("Северная Корея получает все ядерные бомбы ... Прощай, Лос-Анджелес!");
+
+        } else if ((userGuess === "r") && (computerGuess === "n")) {
+          losses++;
+
         } else if ((userGuess === "s") && (computerGuess === "r")) {
           losses++;
-          alert ("Северная Корея получает все ядерные бомбы ... Прощай, Лос-Анджелес!");
+
         } else if ((userGuess === "s") && (computerGuess === "p")) {
           wins++;
-          alert ("Без ядер! Гуам безопасен!");
+
+        } else if ((userGuess === "s") && (computerGuess === "n")) {
+          lossess++;
+
         } else if ((userGuess === "p") && (computerGuess === "r")) {
           wins++;
-          alert ("Без ядер! Гуам безопасен!");
+
         } else if ((userGuess === "p") && (computerGuess === "s")) {
           losses++;
-          alert ("Северная Корея получает все ядерные бомбы ... Прощай, Лос-Анджелес!");
+
+        } else if ((userGuess === "p") && (computerGuess === "n")) {
+          losses++;
+
+        } else if ((userGuess === "n") && (computerGuess === "r" || "s" || "p")) {
+          wins++;
+
         } else if (userGuess === computerGuess) {
           ties++;
-          alert ("Северная Корея получает несколько ядер ... Исправить это, Китай!");
         }
 
         //Creating a variable to hold our new HTML.  OUr HTML now keeps track of hte user and computer guesses, and wins/losses/ties

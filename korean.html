@@ -32,7 +32,7 @@
     <div class="col-lg-12">
       <div id="game">
 
-        <p><h2>"r"을 눌러 "rock"을 선택하고 "p"를 눌러 "paper"또는 "s"를 선택하여 "scissors"를 선택하십시오!</h2></p>
+        <p><h2>"r"을 눌러 "rock"을 연주하고 "p"를 눌러 "paper"를 연주하거나 "s"를 사용하여 "scissors"또는 "n"을 연주하여 핵을 연주하십시오!</h2></p>
       </div>
     </div>
     </div
@@ -47,7 +47,7 @@
 
     <script type="text/javascript">
     //Creates an array that lists out all of the options
-    var computerChoices = ["r", "p", "s"];
+    var computerChoices = ["r", "p", "s", "n"];
 
     //Creating variables to hold the number of iwns, losses and ties. They start at 0
     var wins = 0;
@@ -65,30 +65,42 @@
       var computerGuess = computerChoices[Math.floor(Math.random() * computerChoices.length)];
 
       //This logic determines the outcome of the game, and increments the approriate number
-      if ((userGuess === "r") || (userGuess === "p") || (userGuess === "s")) {
+      if ((userGuess === "r") || (userGuess === "p") || (userGuess === "s") || (userGuess === "n")) {
 
         if ((userGuess === "r") && (computerGuess === "s")) {
           wins++;
-          alert ("조선 민주주의 인민 공화국은 핵무기를 전혀 얻지 못했다! 괌은 안전합니다!");
+
         } else if ((userGuess === "r") && (computerGuess === "p")) {
           losses++;
-          alert ("조선 민주주의 인민 공화국은 많은 핵무기를 확보합니다 ... 안녕히 가세요 로스 앤젤레스!");
+
+        } else if ((userGuess === "r") && (computerGuess === "n")) {
+          losses++;
+
         } else if ((userGuess === "s") && (computerGuess === "r")) {
           losses++;
-          alert ("조선 민주주의 인민 공화국은 많은 핵무기를 확보합니다 ... 안녕히 가세요 로스 앤젤레스!");
+
         } else if ((userGuess === "s") && (computerGuess === "p")) {
           wins++;
-          alert ("조선 민주주의 인민 공화국은 핵무기를 전혀 얻지 못했다! 괌은 안전합니다!");
+
+        } else if ((userGuess === "s") && (computerGuess === "n")) {
+          lossess++;
+
         } else if ((userGuess === "p") && (computerGuess === "r")) {
           wins++;
-          alert ("조선 민주주의 인민 공화국은 핵무기를 전혀 얻지 못했다! 괌은 안전합니다!");
+
         } else if ((userGuess === "p") && (computerGuess === "s")) {
           losses++;
-          alert ("조선 민주주의 인민 공화국은 많은 핵무기를 확보합니다 ... 안녕히 가세요 로스 앤젤레스!");
+
+        } else if ((userGuess === "p") && (computerGuess === "n")) {
+          losses++;
+
+        } else if ((userGuess === "n") && (computerGuess === "r" || "s" || "p")) {
+          wins++;
+
         } else if (userGuess === computerGuess) {
           ties++;
-          alert ("조선 민주주의 인민 공화국은 핵무기를 확보합니다 - 중국은이 상황을 해결해야합니다!");
         }
+
 
         //Creating a variable to hold our new HTML.  OUr HTML now keeps track of hte user and computer guesses, and wins/losses/ties
         var html =
